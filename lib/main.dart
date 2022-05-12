@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Mypage()
+      home: const Mypage()
     );
 
   }
@@ -51,25 +51,22 @@ class _MypageState extends State<Mypage> {
         ),
         body: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
-            Text('Эта кошечка SVG'),
-            SizedBox(height: 10,),
+            const Text('Эта кошечка SVG'),
+            const SizedBox(height: 10,),
             SvgPicture.asset("images/cat.svg"),
-            SizedBox(height: 20,),
-            Text('А это карусель с картинками напрямую из интернета'),
-            SizedBox(height: 20,),
-            Container(
-                child: CarouselSlider.builder(
-                    itemCount: images.length,
-                    itemBuilder: (context, index, realIndex){
-                      var carimages = images[index];
-                      return buildImage(carimages, index);
-                    },
-                    options: CarouselOptions(height: 400)
-                )
-
+            const SizedBox(height: 20,),
+            const Text('А это карусель с картинками напрямую из интернета'),
+            const SizedBox(height: 20,),
+            CarouselSlider.builder(
+                itemCount: images.length,
+                itemBuilder: (context, index, realIndex){
+                  var carimages = images[index];
+                  return buildImage(carimages, index);
+                },
+                options: CarouselOptions(height: 400)
             ),
           ],
         )
@@ -78,7 +75,7 @@ class _MypageState extends State<Mypage> {
     );
   }
   Widget buildImage(String carimage, int index) => Container(
-      margin: EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 12),
       color: Colors.grey,
       child: Image.network(
         carimage,
