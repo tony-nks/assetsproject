@@ -117,7 +117,7 @@ packages:
     source: hosted
     version: "4.0.0"
   import_sorter:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: import_sorter
       url: "https://pub.dartlang.org"
