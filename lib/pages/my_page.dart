@@ -44,7 +44,7 @@ class _MyPageState extends State<MyPage> {
                 itemCount: images.length,
                 itemBuilder: (context, index, realIndex){
                   var carimages = images[index];
-                  return buildImage(carimages, index);
+                  return CustomBuildImage(carimage: carimages, index: index);
                 },
                 options: CarouselOptions(height: 400)
             ),
@@ -54,7 +54,20 @@ class _MyPageState extends State<MyPage> {
 
     );
   }
-  Widget buildImage(String carimage, int index) => Container(
+}
+
+class CustomBuildImage extends StatelessWidget {
+  const CustomBuildImage({
+    Key? key,
+    required this.carimage,
+    required this.index,
+  }) : super(key: key);
+
+  final String carimage;
+  final int index;
+
+  @override
+  Widget build(BuildContext context) => Container(
       margin: const EdgeInsets.symmetric(horizontal: 12),
       color: Colors.grey,
       child: Image.network(

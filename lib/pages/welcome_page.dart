@@ -24,8 +24,6 @@ class _WelcomePageState extends State<WelcomePage> {
             itemCount: images.length,
             itemBuilder: (_, index){
               return Container(
-                width: double.maxFinite,
-                height: double.maxFinite,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
